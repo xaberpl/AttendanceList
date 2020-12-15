@@ -12,6 +12,8 @@ namespace AttendanceList
 {
     public partial class LoginWindow : Form
     {
+        public String login;
+        public String pass;
         public LoginWindow()
         {
             InitializeComponent();
@@ -34,7 +36,9 @@ namespace AttendanceList
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            login = tLogin.Text;
+            pass = tPassword.Text;
+            this.Dispose();
         }
     }
 }
