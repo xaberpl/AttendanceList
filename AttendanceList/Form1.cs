@@ -7,20 +7,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
+using System.Data.SqlClient;
 
 namespace AttendanceList
 {
     public partial class Form1 : Form
     {
+
+        List<Teacher> teacher = new List<Teacher>();
+           
+        private void UpdateBinding()
+        {
+            peopleFoundListbox.DataSource = teacher;
+            peopleFoundListbox.DisplayMember = "FullInfo";
+        }
+
         public Form1()
         {
             InitializeComponent();
+            UpdateBinding();
+            
         }
+
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
             LoginWindow okno = new LoginWindow();
-            DialogResult rezultat = okno.ShowDialog();
+            DialogResult = okno.ShowDialog();
+
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -70,6 +86,18 @@ namespace AttendanceList
 
         private void label3_Click_1(object sender, EventArgs e)
         {
+
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            DataAccess db = new DataAccess();
+
+            teacher = db.GetTeacher(lastNameText.Text);
+
+            peopleFoundListbox.Refresh();
+
+            UpdateBinding();
 
         }
     }

@@ -29,7 +29,7 @@ namespace AttendanceList
         /// </summary>
         private void InitializeComponent()
         {
-            this.StudentList = new System.Windows.Forms.ListBox();
+            this.studentList = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -47,16 +47,20 @@ namespace AttendanceList
             this.tPesel = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.peopleFoundListbox = new System.Windows.Forms.ListBox();
+            this.lastNameText = new System.Windows.Forms.TextBox();
+            this.lastNameLabel = new System.Windows.Forms.Label();
+            this.searchButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // StudentList
+            // studentList
             // 
-            this.StudentList.FormattingEnabled = true;
-            this.StudentList.Location = new System.Drawing.Point(12, 13);
-            this.StudentList.Name = "StudentList";
-            this.StudentList.Size = new System.Drawing.Size(189, 433);
-            this.StudentList.TabIndex = 0;
-            this.StudentList.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.studentList.FormattingEnabled = true;
+            this.studentList.Location = new System.Drawing.Point(12, 13);
+            this.studentList.Name = "studentList";
+            this.studentList.Size = new System.Drawing.Size(189, 433);
+            this.studentList.TabIndex = 0;
+            this.studentList.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -206,11 +210,49 @@ namespace AttendanceList
             this.textBox2.Size = new System.Drawing.Size(113, 20);
             this.textBox2.TabIndex = 16;
             // 
+            // peopleFoundListbox
+            // 
+            this.peopleFoundListbox.FormattingEnabled = true;
+            this.peopleFoundListbox.Location = new System.Drawing.Point(247, 298);
+            this.peopleFoundListbox.Name = "peopleFoundListbox";
+            this.peopleFoundListbox.Size = new System.Drawing.Size(120, 95);
+            this.peopleFoundListbox.TabIndex = 18;
+            // 
+            // lastNameText
+            // 
+            this.lastNameText.Location = new System.Drawing.Point(394, 317);
+            this.lastNameText.Name = "lastNameText";
+            this.lastNameText.Size = new System.Drawing.Size(100, 20);
+            this.lastNameText.TabIndex = 19;
+            // 
+            // lastNameLabel
+            // 
+            this.lastNameLabel.AutoSize = true;
+            this.lastNameLabel.Location = new System.Drawing.Point(395, 298);
+            this.lastNameLabel.Name = "lastNameLabel";
+            this.lastNameLabel.Size = new System.Drawing.Size(58, 13);
+            this.lastNameLabel.TabIndex = 20;
+            this.lastNameLabel.Text = "Last Name";
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(398, 344);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.TabIndex = 21;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(528, 504);
+            this.Controls.Add(this.searchButton);
+            this.Controls.Add(this.lastNameLabel);
+            this.Controls.Add(this.lastNameText);
+            this.Controls.Add(this.peopleFoundListbox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label6);
@@ -228,7 +270,7 @@ namespace AttendanceList
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.StudentList);
+            this.Controls.Add(this.studentList);
             this.Name = "Form1";
             this.Text = "AttendanceList";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -239,7 +281,7 @@ namespace AttendanceList
 
         #endregion
 
-        private System.Windows.Forms.ListBox StudentList;
+        private System.Windows.Forms.ListBox studentList;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -257,6 +299,10 @@ namespace AttendanceList
         private System.Windows.Forms.TextBox tPesel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ListBox peopleFoundListbox;
+        private System.Windows.Forms.TextBox lastNameText;
+        private System.Windows.Forms.Label lastNameLabel;
+        private System.Windows.Forms.Button searchButton;
     }
 }
 
