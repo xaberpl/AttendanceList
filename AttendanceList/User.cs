@@ -8,70 +8,20 @@ namespace AttendanceList
 {
     class User
     {
-        private String name;
-        private String surname;
-        private String username;
-        private String password;
-        public string Name
+        public int id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string EmailAddress { get; set; }
+        public string Password { get; set; }
+        public string Type { get; set; }
+
+        public string FullInfo
         {
             get
             {
-                return name;
-            }
+                return $"{ FirstName } { LastName }";
 
-            set
-            {
-                name = value;
             }
         }
-
-        public string Username
-        {
-            get
-            {
-                return username;
-            }
-
-            set
-            {
-                username = value;
-            }
-        }
-
-        public string Surname
-        {
-            get
-            {
-                return surname;
-            }
-
-            set
-            {
-                surname = value;
-            }
-        }
-
-        public string Password
-        {
-            get
-            {
-                return password;
-            }
-
-            set
-            {
-                password = value;
-            }
-        }
-
-        public User(string aName, string aSurname, string aUsername, string aPassword)
-        {
-            name = aName;
-            surname = aSurname;
-            username = aUsername;
-            password = aPassword;
-        }
-
     }
-
 }

@@ -15,13 +15,17 @@ namespace AttendanceList
     public partial class Form1 : Form
     {
 
-        List<Teacher> teacher = new List<Teacher>();
-           
+        List<User> users = new List<User>();
+
+
+
         private void UpdateBinding()
         {
-            peopleFoundListbox.DataSource = teacher;
+            peopleFoundListbox.DataSource = users;
             peopleFoundListbox.DisplayMember = "FullInfo";
         }
+
+
 
         public Form1()
         {
@@ -37,7 +41,18 @@ namespace AttendanceList
             LoginWindow okno = new LoginWindow();
             DialogResult = okno.ShowDialog();
 
+            DatabaseClient db = new DatabaseClient();
+
+            users = db.GetAllStudents();
+
+            studentList.Refresh();
+
+            studentList.DataSource = users;
+            studentList.DisplayMember = "FullInfo";
+
         }
+
+
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -91,14 +106,16 @@ namespace AttendanceList
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            DataAccess db = new DataAccess();
+            DatabaseClient db = new DatabaseClient();
 
-            teacher = db.GetTeacher(lastNameText.Text);
+            users = db.GetAllStudents();
 
             peopleFoundListbox.Refresh();
 
             UpdateBinding();
 
         }
+
+
     }
 }
