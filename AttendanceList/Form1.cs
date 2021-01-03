@@ -15,22 +15,23 @@ namespace AttendanceList
     public partial class Form1 : Form
     {
 
-        List<User> users = new List<User>();
-        
+        //List<User> users = new List<User>();
+        List<Student> students = new List<Student>();
 
 
-        private void UpdateBinding()
+
+        /*private void UpdateBinding()
         {
             peopleFoundListbox.DataSource = users;
             peopleFoundListbox.DisplayMember = "FullInfo" ;
-        }
+        }*/
 
-        
+
 
         public Form1()
         {
             InitializeComponent();
-            UpdateBinding();
+            //UpdateBinding();
 
         }
 
@@ -43,11 +44,11 @@ namespace AttendanceList
 
             DatabaseClient db = new DatabaseClient();
 
-            users = db.GetAllStudents();
+            students = db.GetAllStudents();
 
             studentList.Refresh();
            
-            studentList.DataSource = users;
+            studentList.DataSource = students;
             studentList.DisplayMember = "DisplayName";
             
 
@@ -106,22 +107,22 @@ namespace AttendanceList
         {
             DatabaseClient db = new DatabaseClient();
 
-            users = db.GetAllStudents();
+            students = db.GetAllStudents();
 
             peopleFoundListbox.Refresh();
 
-            UpdateBinding();
+            //UpdateBinding();
         }
 
         private void studentClick(object sender, EventArgs e)
         {
             string text = studentList.GetItemText(studentList.SelectedItem);
-            User found = null;
-            foreach (User user in users)
+            Student found = null;
+            foreach (Student student in students)
             {
-                if (user.DisplayName == text)
+                if (student.DisplayName == text)
                 {
-                    found = user;
+                    found = student;
                 }
             }
             if (found != null)
@@ -129,6 +130,14 @@ namespace AttendanceList
                 tName.Text = found.FirstName;
                 tSurname.Text = found.LastName;
                 tEmail.Text = found.EmailAddress;
+                tPesel.Text = found.Pesel;
+                tParentsPhoneNumber.Text = found.ParentsPhoneNumber;
+                tGender.Text = found.Gender;
+                tDateOfBirth.Text = "tbc";
+                string str = found.Pesel.Substring(0, 2);
+                tAge.Text = str;
+
+
             }
         }
 
@@ -138,6 +147,26 @@ namespace AttendanceList
         }
 
         private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tType_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }

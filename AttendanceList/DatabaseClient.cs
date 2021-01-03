@@ -47,11 +47,11 @@ namespace AttendanceList
         }
 
         //wyświetla liste wszystkich studentów
-        public List<User> GetAllStudents()
+        public List<Student> GetAllStudents()
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("FirstDB")))
             {
-                return connection.Query<User>($"SELECT * FROM Users WHERE Type = 'Student' ").ToList();
+                return connection.Query<Student>($"SELECT * FROM Students ").ToList();
             }
         }
 
