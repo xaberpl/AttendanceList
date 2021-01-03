@@ -16,25 +16,25 @@ namespace AttendanceList
     {
 
         List<User> users = new List<User>();
-
+        
 
 
         private void UpdateBinding()
         {
             peopleFoundListbox.DataSource = users;
-            peopleFoundListbox.DisplayMember = "FullInfo";
+            peopleFoundListbox.DisplayMember = "FullInfo" ;
         }
 
-
+        
 
         public Form1()
         {
             InitializeComponent();
             UpdateBinding();
-            
+
         }
 
-        
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -46,14 +46,12 @@ namespace AttendanceList
             users = db.GetAllStudents();
 
             studentList.Refresh();
-
+           
             studentList.DataSource = users;
-            studentList.DisplayMember = "FullInfo";
+            studentList.DisplayMember = "DisplayName";
+            
 
         }
-
-
-
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -113,9 +111,35 @@ namespace AttendanceList
             peopleFoundListbox.Refresh();
 
             UpdateBinding();
+        }
+
+        private void studentClick(object sender, EventArgs e)
+        {
+            string text = studentList.GetItemText(studentList.SelectedItem);
+            User found = null;
+            foreach (User user in users)
+            {
+                if (user.DisplayName == text)
+                {
+                    found = user;
+                }
+            }
+            if (found != null)
+            {
+                tName.Text = found.FirstName;
+                tSurname.Text = found.LastName;
+                tEmail.Text = found.EmailAddress;
+            }
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
 
         }
 
+        private void label8_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

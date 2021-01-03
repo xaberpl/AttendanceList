@@ -46,11 +46,20 @@ namespace AttendanceList
             }
         }
 
+        //wyświetla liste wszystkich studentów
         public List<User> GetAllStudents()
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("FirstDB")))
             {
                 return connection.Query<User>($"SELECT * FROM Users WHERE Type = 'Student' ").ToList();
+            }
+        }
+
+        public List<User> GetStudent(string name, string lastname)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("FirstDB")))
+            {
+                return connection.Query<User>($"select * from Users where FirstName = '{ name }' AND LastName = '{ lastname }'").ToList();
             }
         }
     }

@@ -15,7 +15,7 @@ namespace AttendanceList
         public string Password { get; set; }
         public string Type { get; set; }
 
-        public string FullInfo
+        public string DisplayName
         {
             get
             {
