@@ -62,6 +62,18 @@ namespace AttendanceList
                 return connection.Query<User>($"select * from Users where FirstName = '{ name }' AND LastName = '{ lastname }'").ToList();
             }
         }
+
+        public void InsertPerson(int teacherid, int studentid, string date, int presence)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("FirstDB")))
+            {
+                List<Attendance> attendance = new List<Attendance>();
+                attendance.Add(new Attendance { TeacherID = teacherid, StudentID = studentid, Data = date, Presence = presence });
+                connection.Execute("dbo.Attendance_Insert @TeacherID, @StudentID, @Data, @Presence");
+
+
+            }
+        }
     }
 }
 

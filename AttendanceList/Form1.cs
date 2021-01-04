@@ -17,8 +17,7 @@ namespace AttendanceList
 
         //List<User> users = new List<User>();
         List<Student> students = new List<Student>();
-
-
+        List<Attendance> attendance = new List<Attendance>();
 
         /*private void UpdateBinding()
         {
@@ -26,16 +25,10 @@ namespace AttendanceList
             peopleFoundListbox.DisplayMember = "FullInfo" ;
         }*/
 
-
-
         public Form1()
         {
             InitializeComponent();
-            //UpdateBinding();
-
         }
-
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -51,7 +44,6 @@ namespace AttendanceList
             studentList.DataSource = students;
             studentList.DisplayMember = "DisplayName";
             
-
         }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -103,17 +95,6 @@ namespace AttendanceList
 
         }
 
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-            DatabaseClient db = new DatabaseClient();
-
-            students = db.GetAllStudents();
-
-            peopleFoundListbox.Refresh();
-
-            //UpdateBinding();
-        }
-
         private void studentClick(object sender, EventArgs e)
         {
             string text = studentList.GetItemText(studentList.SelectedItem);
@@ -136,8 +117,6 @@ namespace AttendanceList
                 tDateOfBirth.Text = "tbc";
                 string str = found.Pesel.Substring(0, 2);
                 tAge.Text = str;
-
-
             }
         }
 
@@ -168,6 +147,18 @@ namespace AttendanceList
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            /*DatabaseClient db = new DatabaseClient();
+            db.InsertPerson(test1.Text, test2.Text, test3.Text, test4.Text);
+
+            test1.Text = "";
+            test2.Text = "";
+            test3.Text = "";
+            test4.Text = "";*/
 
         }
     }

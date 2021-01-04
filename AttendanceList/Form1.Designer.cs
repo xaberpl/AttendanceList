@@ -47,14 +47,16 @@ namespace AttendanceList
             this.tPesel = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tParentsPhoneNumber = new System.Windows.Forms.TextBox();
-            this.peopleFoundListbox = new System.Windows.Forms.ListBox();
-            this.surnameText = new System.Windows.Forms.TextBox();
-            this.lastNameLabel = new System.Windows.Forms.Label();
-            this.searchButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.tEmail = new System.Windows.Forms.TextBox();
             this.tAge = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.presentButton = new System.Windows.Forms.Button();
+            this.absentButton = new System.Windows.Forms.Button();
+            this.test1 = new System.Windows.Forms.TextBox();
+            this.test2 = new System.Windows.Forms.TextBox();
+            this.test3 = new System.Windows.Forms.TextBox();
+            this.test4 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // studentList
@@ -62,14 +64,14 @@ namespace AttendanceList
             this.studentList.FormattingEnabled = true;
             this.studentList.Location = new System.Drawing.Point(12, 22);
             this.studentList.Name = "studentList";
-            this.studentList.Size = new System.Drawing.Size(189, 485);
+            this.studentList.Size = new System.Drawing.Size(189, 420);
             this.studentList.TabIndex = 0;
             this.studentList.Click += new System.EventHandler(this.studentClick);
             this.studentList.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 531);
+            this.button1.Location = new System.Drawing.Point(12, 451);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(189, 40);
             this.button1.TabIndex = 1;
@@ -79,7 +81,7 @@ namespace AttendanceList
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(398, 531);
+            this.button2.Location = new System.Drawing.Point(398, 451);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(109, 40);
             this.button2.TabIndex = 2;
@@ -97,7 +99,7 @@ namespace AttendanceList
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(258, 531);
+            this.button3.Location = new System.Drawing.Point(258, 451);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(109, 40);
             this.button3.TabIndex = 4;
@@ -218,40 +220,6 @@ namespace AttendanceList
             this.tParentsPhoneNumber.TabIndex = 16;
             this.tParentsPhoneNumber.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // peopleFoundListbox
-            // 
-            this.peopleFoundListbox.FormattingEnabled = true;
-            this.peopleFoundListbox.Location = new System.Drawing.Point(251, 396);
-            this.peopleFoundListbox.Name = "peopleFoundListbox";
-            this.peopleFoundListbox.Size = new System.Drawing.Size(120, 95);
-            this.peopleFoundListbox.TabIndex = 18;
-            // 
-            // surnameText
-            // 
-            this.surnameText.Location = new System.Drawing.Point(398, 415);
-            this.surnameText.Name = "surnameText";
-            this.surnameText.Size = new System.Drawing.Size(100, 20);
-            this.surnameText.TabIndex = 19;
-            // 
-            // lastNameLabel
-            // 
-            this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Location = new System.Drawing.Point(399, 396);
-            this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(58, 13);
-            this.lastNameLabel.TabIndex = 20;
-            this.lastNameLabel.Text = "Last Name";
-            // 
-            // searchButton
-            // 
-            this.searchButton.Location = new System.Drawing.Point(402, 442);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 23);
-            this.searchButton.TabIndex = 21;
-            this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -287,19 +255,68 @@ namespace AttendanceList
             this.label7.Text = "Age";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // presentButton
+            // 
+            this.presentButton.Location = new System.Drawing.Point(258, 370);
+            this.presentButton.Name = "presentButton";
+            this.presentButton.Size = new System.Drawing.Size(109, 40);
+            this.presentButton.TabIndex = 27;
+            this.presentButton.Text = "Present";
+            this.presentButton.UseVisualStyleBackColor = true;
+            this.presentButton.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // absentButton
+            // 
+            this.absentButton.Location = new System.Drawing.Point(398, 370);
+            this.absentButton.Name = "absentButton";
+            this.absentButton.Size = new System.Drawing.Size(109, 40);
+            this.absentButton.TabIndex = 26;
+            this.absentButton.Text = "Absent";
+            this.absentButton.UseVisualStyleBackColor = true;
+            // 
+            // test1
+            // 
+            this.test1.Location = new System.Drawing.Point(258, 312);
+            this.test1.Name = "test1";
+            this.test1.Size = new System.Drawing.Size(113, 20);
+            this.test1.TabIndex = 28;
+            // 
+            // test2
+            // 
+            this.test2.Location = new System.Drawing.Point(393, 312);
+            this.test2.Name = "test2";
+            this.test2.Size = new System.Drawing.Size(113, 20);
+            this.test2.TabIndex = 29;
+            // 
+            // test3
+            // 
+            this.test3.Location = new System.Drawing.Point(258, 338);
+            this.test3.Name = "test3";
+            this.test3.Size = new System.Drawing.Size(113, 20);
+            this.test3.TabIndex = 30;
+            // 
+            // test4
+            // 
+            this.test4.Location = new System.Drawing.Point(393, 338);
+            this.test4.Name = "test4";
+            this.test4.Size = new System.Drawing.Size(113, 20);
+            this.test4.TabIndex = 31;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 580);
+            this.ClientSize = new System.Drawing.Size(518, 518);
+            this.Controls.Add(this.test4);
+            this.Controls.Add(this.test3);
+            this.Controls.Add(this.test2);
+            this.Controls.Add(this.test1);
+            this.Controls.Add(this.presentButton);
+            this.Controls.Add(this.absentButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tAge);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.tEmail);
-            this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.lastNameLabel);
-            this.Controls.Add(this.surnameText);
-            this.Controls.Add(this.peopleFoundListbox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tParentsPhoneNumber);
             this.Controls.Add(this.label6);
@@ -346,14 +363,16 @@ namespace AttendanceList
         private System.Windows.Forms.TextBox tPesel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tParentsPhoneNumber;
-        private System.Windows.Forms.ListBox peopleFoundListbox;
-        private System.Windows.Forms.TextBox surnameText;
-        private System.Windows.Forms.Label lastNameLabel;
-        private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tEmail;
         private System.Windows.Forms.TextBox tAge;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button presentButton;
+        private System.Windows.Forms.Button absentButton;
+        private System.Windows.Forms.TextBox test1;
+        private System.Windows.Forms.TextBox test2;
+        private System.Windows.Forms.TextBox test3;
+        private System.Windows.Forms.TextBox test4;
     }
 }
 
