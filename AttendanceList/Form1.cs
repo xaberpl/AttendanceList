@@ -17,7 +17,7 @@ namespace AttendanceList
 
         //List<User> users = new List<User>();
         List<Student> students = new List<Student>();
-        List<Attendance> attendance = new List<Attendance>();
+        List<Attendance> attendances = new List<Attendance>();
 
         /*private void UpdateBinding()
         {
@@ -152,14 +152,18 @@ namespace AttendanceList
 
         private void button4_Click(object sender, EventArgs e)
         {
-            /*DatabaseClient db = new DatabaseClient();
-            db.InsertPerson(test1.Text, test2.Text, test3.Text, test4.Text);
+            DatabaseClient db = new DatabaseClient();
 
+            db.InsertAttendances(test1.Text, test2.Text, test3.Text, test4.Text);
             test1.Text = "";
             test2.Text = "";
             test3.Text = "";
-            test4.Text = "";*/
+            test4.Text = "";
 
+           
+            
+
+            
         }
     }
 }
