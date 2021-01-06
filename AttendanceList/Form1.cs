@@ -165,5 +165,36 @@ namespace AttendanceList
 
             
         }
+
+        private void test1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addStudent_Click(object sender, EventArgs e)
+        {
+            addStudent addstudent = new addStudent();
+            DialogResult = addstudent.ShowDialog();
+        }
+
+        private void tEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tGender_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

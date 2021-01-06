@@ -77,7 +77,7 @@ namespace AttendanceList
             this.button1.TabIndex = 1;
             this.button1.Text = "Add student";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.addStudent_Click);
             // 
             // button2
             // 
@@ -177,6 +177,7 @@ namespace AttendanceList
             this.label5.Size = new System.Drawing.Size(42, 13);
             this.label5.TabIndex = 13;
             this.label5.Text = "Gender";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // tGender
             // 
@@ -184,6 +185,7 @@ namespace AttendanceList
             this.tGender.Name = "tGender";
             this.tGender.Size = new System.Drawing.Size(113, 20);
             this.tGender.TabIndex = 12;
+            this.tGender.TextChanged += new System.EventHandler(this.tGender_TextChanged);
             // 
             // label6
             // 
@@ -193,6 +195,7 @@ namespace AttendanceList
             this.label6.Size = new System.Drawing.Size(33, 13);
             this.label6.TabIndex = 15;
             this.label6.Text = "Pesel";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // tPesel
             // 
@@ -236,6 +239,7 @@ namespace AttendanceList
             this.tEmail.Name = "tEmail";
             this.tEmail.Size = new System.Drawing.Size(113, 20);
             this.tEmail.TabIndex = 22;
+            this.tEmail.TextChanged += new System.EventHandler(this.tEmail_TextChanged);
             // 
             // tAge
             // 
@@ -280,6 +284,7 @@ namespace AttendanceList
             this.test1.Name = "test1";
             this.test1.Size = new System.Drawing.Size(113, 20);
             this.test1.TabIndex = 28;
+            this.test1.TextChanged += new System.EventHandler(this.test1_TextChanged);
             // 
             // test2
             // 

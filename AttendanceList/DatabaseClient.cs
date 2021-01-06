@@ -19,6 +19,8 @@ namespace AttendanceList
             }
         }
 
+
+
         //po kliknięciu wyszukaj, pokaże liste wszystkich użytkowników zapisanych w bazie danych
         public List<User> GetUsers()
         {
@@ -74,6 +76,18 @@ namespace AttendanceList
                 attendances.Add(new Attendance { StudentID = text1, TeacherID = text2, Data = text3, Presence = text4 });
                 
                 connection.Execute("dbo.Attendance_Insert @StudentID, @TeacherID, @Data, @Presence", attendances);
+            }
+        }
+
+        internal void addStudent(string text1, string text2, string text3, string text4, string text5, string text6)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("FirstDB")))
+            {
+                List<Student> students = new List<Student>();
+
+                students.Add(new Student { FirstName = text1, LastName = text2, EmailAddress = text3, Pesel = text4, Gender = text5, ParentsPhoneNumber = text6 });
+
+                connection.Execute("dbo.Students_Insert @FirstName, @LastName, @EmailAddress, @Pesel, @Gender, @ParentsPhoneNumber", students);
             }
         }
     }
