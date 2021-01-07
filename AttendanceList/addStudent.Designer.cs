@@ -36,7 +36,6 @@ namespace AttendanceList
             this.label6 = new System.Windows.Forms.Label();
             this.tPesel = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.tGender = new System.Windows.Forms.TextBox();
             this.Lastname = new System.Windows.Forms.Label();
             this.tSurname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,6 +43,7 @@ namespace AttendanceList
             this.tName = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.tGender = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label8
@@ -102,13 +102,6 @@ namespace AttendanceList
             this.label5.Size = new System.Drawing.Size(42, 13);
             this.label5.TabIndex = 30;
             this.label5.Text = "Gender";
-            // 
-            // tGender
-            // 
-            this.tGender.Location = new System.Drawing.Point(55, 230);
-            this.tGender.Name = "tGender";
-            this.tGender.Size = new System.Drawing.Size(113, 20);
-            this.tGender.TabIndex = 29;
             // 
             // Lastname
             // 
@@ -173,11 +166,25 @@ namespace AttendanceList
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelClick);
             // 
+            // tGender
+            // 
+            this.tGender.FormattingEnabled = true;
+            this.tGender.Items.AddRange(new object[] {
+            "Female",
+            "Male",
+            "Other"});
+            this.tGender.Location = new System.Drawing.Point(55, 230);
+            this.tGender.Name = "tGender";
+            this.tGender.Size = new System.Drawing.Size(112, 21);
+            this.tGender.TabIndex = 39;
+            this.tGender.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // addStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(363, 486);
+            this.Controls.Add(this.tGender);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label8);
@@ -187,7 +194,6 @@ namespace AttendanceList
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tPesel);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.tGender);
             this.Controls.Add(this.Lastname);
             this.Controls.Add(this.tSurname);
             this.Controls.Add(this.label2);
@@ -209,7 +215,6 @@ namespace AttendanceList
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tPesel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tGender;
         private System.Windows.Forms.Label Lastname;
         private System.Windows.Forms.TextBox tSurname;
         private System.Windows.Forms.Label label2;
@@ -217,5 +222,6 @@ namespace AttendanceList
         private System.Windows.Forms.TextBox tName;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.ComboBox tGender;
     }
 }
