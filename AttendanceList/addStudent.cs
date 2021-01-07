@@ -127,6 +127,12 @@ namespace AttendanceList
             if (error == null)
             {
                 db.addStudent(tName.Text, tSurname.Text, tEmail.Text, tPesel.Text, tGender.Text, tParentsPhoneNumber.Text);
+
+                students = db.GetAllStudents();
+
+                
+                
+
                 ActiveForm.Close();
             }
 

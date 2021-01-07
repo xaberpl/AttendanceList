@@ -30,22 +30,27 @@ namespace AttendanceList
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        void showStudentList()
         {
-            LoginWindow okno = new LoginWindow();
-            DialogResult = okno.ShowDialog();
-
             DatabaseClient db = new DatabaseClient();
 
             students = db.GetAllStudents();
 
             studentList.Refresh();
-           
+
             studentList.DataSource = students;
             studentList.DisplayMember = "DisplayName";
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            LoginWindow okno = new LoginWindow();
+            DialogResult = okno.ShowDialog();
+
+            showStudentList();
             
         }
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        public void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -175,6 +180,7 @@ namespace AttendanceList
         {
             addStudent addstudent = new addStudent();
             DialogResult = addstudent.ShowDialog();
+            showStudentList();
         }
 
         private void tEmail_TextChanged(object sender, EventArgs e)
