@@ -44,8 +44,8 @@ namespace AttendanceList
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            LoginWindow okno = new LoginWindow();
-            DialogResult = okno.ShowDialog();
+            //LoginWindow okno = new LoginWindow();
+           // DialogResult = okno.ShowDialog();
 
             showStudentList();
             
@@ -119,9 +119,9 @@ namespace AttendanceList
                 tPesel.Text = found.Pesel;
                 tParentsPhoneNumber.Text = found.ParentsPhoneNumber;
                 tGender.Text = found.Gender;
-                tDateOfBirth.Text = "tbc";
-                string str = found.Pesel.Substring(0, 2);
-                tAge.Text = str;
+
+
+
             }
         }
 

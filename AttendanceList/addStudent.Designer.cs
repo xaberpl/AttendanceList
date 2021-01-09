@@ -201,6 +201,7 @@ namespace AttendanceList
             this.Controls.Add(this.tName);
             this.Name = "addStudent";
             this.Text = "addStudent";
+            this.Load += new System.EventHandler(this.addStudent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

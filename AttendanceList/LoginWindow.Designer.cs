@@ -62,11 +62,13 @@ namespace AttendanceList
             this.tLogin.Name = "tLogin";
             this.tLogin.Size = new System.Drawing.Size(100, 20);
             this.tLogin.TabIndex = 2;
+            this.tLogin.TextChanged += new System.EventHandler(this.tLogin_TextChanged);
             // 
             // tPassword
             // 
             this.tPassword.Location = new System.Drawing.Point(148, 55);
             this.tPassword.Name = "tPassword";
+            this.tPassword.PasswordChar = '*';
             this.tPassword.Size = new System.Drawing.Size(100, 20);
             this.tPassword.TabIndex = 3;
             // 
@@ -79,7 +81,7 @@ namespace AttendanceList
             this.button1.TabIndex = 4;
             this.button1.Text = "LOGIN";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.loginButtonClick);
             // 
             // LoginWindow
             // 

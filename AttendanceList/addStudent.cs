@@ -146,6 +146,11 @@ namespace AttendanceList
 
         }
 
+        private void addStudent_Load(object sender, EventArgs e)
+        {
+
+        }
+
         //void error(string x)
         //{
         //    error = error + x;

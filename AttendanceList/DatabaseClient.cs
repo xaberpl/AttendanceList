@@ -90,6 +90,13 @@ namespace AttendanceList
                 connection.Execute("dbo.Students_Insert @FirstName, @LastName, @EmailAddress, @Pesel, @Gender, @ParentsPhoneNumber", students);
             }
         }
+        public List<Teacher> Login(string login)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("FirstDB")))
+            {
+                return connection.Query<Teacher>($"select * from Teachers where Login = '{ login }'").ToList();
+            }
+        }
     }
 }
 
