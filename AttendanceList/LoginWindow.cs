@@ -14,12 +14,13 @@ namespace AttendanceList
     public partial class LoginWindow : Form
     {
         List<Teacher> teachers = new List<Teacher>();
-        //public String login;
-        //public String pass;
+        public string text { get; set; }
+
+        string text2;
+
         public LoginWindow()
         {
             InitializeComponent();
-            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -39,9 +40,7 @@ namespace AttendanceList
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //login = tLogin.Text;
-            //pass = tPassword.Text;
-            //this.Dispose();
+
         }
 
         private void tLogin_TextChanged(object sender, EventArgs e)
@@ -52,34 +51,35 @@ namespace AttendanceList
         private void loginButtonClick(object sender, EventArgs e)
         {
             DatabaseClient db = new DatabaseClient();
-            string text = tLogin.Text;
-            string text2 = tPassword.Text;
-            //Teacher found = null;
+
+            text = tLogin.Text;
+            text2 = tPassword.Text;
+
             teachers = db.Login(text);
-            int i = 0;
+            bool loginPasswordCorrect = false;
             foreach (Teacher teacher in teachers)
 
-            {
-
+            { 
                 if (text == teacher.Login && text2 == teacher.Password)
                 {
                     this.Hide();
                     var mainWindow = new Form1();
                     mainWindow.Closed += (s, args) => this.Close();
+                    mainWindow._textBox = _textBox1;
                     mainWindow.Show();
-                    i++;
+                    loginPasswordCorrect = true;
                     break;
                 }              
-            }         
-            if (text != (db.Login(text)).ToString())
-            {
-                if(i == 1)
-                {
-                    i++;
-                }    
-                else
-                    MessageBox.Show("Incorrect login or password");
             }
+            if (!loginPasswordCorrect)
+            {
+                MessageBox.Show("Incorrect login or password");
+            }
+
+        }
+        public string _textBox1
+        {
+            get { return tLogin.Text; }
         }
     }   
 }

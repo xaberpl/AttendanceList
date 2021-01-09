@@ -97,6 +97,14 @@ namespace AttendanceList
                 return connection.Query<Teacher>($"select * from Teachers where Login = '{ login }'").ToList();
             }
         }
+
+        public List<Teacher> whoLogged(string login)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("FirstDB")))
+            {
+                return connection.Query<Teacher>($"select * from Teachers where login = '{ login }'").ToList();
+            }
+        }
     }
 }
 

@@ -13,17 +13,11 @@ using System.Data.SqlClient;
 namespace AttendanceList
 {
     public partial class Form1 : Form
-    {
-
-        //List<User> users = new List<User>();
+    { 
         List<Student> students = new List<Student>();
         List<Attendance> attendances = new List<Attendance>();
-
-        /*private void UpdateBinding()
-        {
-            peopleFoundListbox.DataSource = users;
-            peopleFoundListbox.DisplayMember = "FullInfo" ;
-        }*/
+        List<Teacher> teachers = new List<Teacher>();
+        string loggedName;
 
         public Form1()
         {
@@ -40,16 +34,24 @@ namespace AttendanceList
 
             studentList.DataSource = students;
             studentList.DisplayMember = "DisplayName";
+
+        }
+        public string _textBox
+        {
+            set { loggedName = value; }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //LoginWindow okno = new LoginWindow();
-           // DialogResult = okno.ShowDialog();
-
             showStudentList();
-            
+            DatabaseClient db = new DatabaseClient();
+            teachers = db.whoLogged(loggedName);
+            label9.Text = "You are logged in as: " + teachers[0].DisplayName;        
         }
+
+
+
+
         public void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -132,8 +134,6 @@ namespace AttendanceList
                 if (oDate.Date > today.AddYears(-age)) age--;
                 string wiek = age.ToString();
                 tAge.Text = wiek;
-
-
             }
         }
 
@@ -169,18 +169,14 @@ namespace AttendanceList
 
         private void button4_Click(object sender, EventArgs e)
         {
-            DatabaseClient db = new DatabaseClient();
+            presentButton.BackColor = Color.Green;
 
+            /*DatabaseClient db = new DatabaseClient();
             db.InsertAttendances(test1.Text, test2.Text, test3.Text, test4.Text);
             test1.Text = "";
             test2.Text = "";
             test3.Text = "";
-            test4.Text = "";
-
-           
-            
-
-            
+            test4.Text = "";    */
         }
 
         private void test1_TextChanged(object sender, EventArgs e)
@@ -214,5 +210,16 @@ namespace AttendanceList
         {
 
         }
+
+        public void label9_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label9_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
     }
 }

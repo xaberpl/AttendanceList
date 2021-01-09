@@ -94,7 +94,7 @@ namespace AttendanceList
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "LoginWindow";
-            this.Text = "Login Panel";
+            this.Text = "";
             this.Load += new System.EventHandler(this.LoginWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
