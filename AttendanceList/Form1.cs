@@ -120,6 +120,18 @@ namespace AttendanceList
                 tParentsPhoneNumber.Text = found.ParentsPhoneNumber;
                 tGender.Text = found.Gender;
 
+                string input = found.Pesel;
+                string sub = input.Substring(0, 6);
+                string iString = sub;
+                DateTime oDate = DateTime.ParseExact(iString, "yyMMdd", null);
+                string urodziny = oDate.ToString();
+                tDateOfBirth.Text = urodziny.Substring(0, 10);
+
+                var today = DateTime.Today;
+                var age = today.Year - oDate.Year;
+                if (oDate.Date > today.AddYears(-age)) age--;
+                string wiek = age.ToString();
+                tAge.Text = wiek;
 
 
             }
