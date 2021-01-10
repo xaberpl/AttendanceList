@@ -27,7 +27,7 @@ namespace AttendanceList
         void showStudentList()
         {
             DatabaseClient db = new DatabaseClient();
-
+            
             students = db.GetAllStudents();
 
             studentList.Refresh();
@@ -169,14 +169,7 @@ namespace AttendanceList
 
         private void button4_Click(object sender, EventArgs e)
         {
-            presentButton.BackColor = Color.Green;
 
-            /*DatabaseClient db = new DatabaseClient();
-            db.InsertAttendances(test1.Text, test2.Text, test3.Text, test4.Text);
-            test1.Text = "";
-            test2.Text = "";
-            test3.Text = "";
-            test4.Text = "";    */
         }
 
         private void test1_TextChanged(object sender, EventArgs e)
@@ -221,5 +214,40 @@ namespace AttendanceList
             
         }
 
+        private void presentButton_Click(object sender, EventArgs e)
+        {
+            DatabaseClient db = new DatabaseClient();
+
+            string theDate = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+
+            //STUDENT ID
+            string studentID = null;
+
+            string text = studentList.GetItemText(studentList.SelectedItem);
+            Student found = null;
+
+            foreach (Student student in students)
+            {
+                if (student.DisplayName == text)
+                {
+                    found = student;
+                }
+            }
+            if (found != null)
+            {
+                studentID = found.id.ToString();
+            }
+
+
+            //TEACHERID
+
+            teachers = db.whoLogged(loggedName);
+            string teacherID = teachers[0].id.ToString();
+
+
+
+            db.InsertAttendances(studentID, teacherID, theDate, "1");
+              
+        }
     }
 }

@@ -58,7 +58,6 @@ namespace AttendanceList
             this.test3 = new System.Windows.Forms.TextBox();
             this.test4 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // studentList
@@ -269,7 +268,7 @@ namespace AttendanceList
             this.presentButton.TabIndex = 27;
             this.presentButton.Text = "Present";
             this.presentButton.UseVisualStyleBackColor = true;
-            this.presentButton.Click += new System.EventHandler(this.button4_Click);
+            this.presentButton.Click += new System.EventHandler(this.presentButton_Click);
             // 
             // absentButton
             // 
@@ -320,19 +319,11 @@ namespace AttendanceList
             this.label9.TextChanged += new System.EventHandler(this.label9_TextChanged);
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(250, 55);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 33;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(518, 518);
-            this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.test4);
             this.Controls.Add(this.test3);
@@ -401,7 +392,6 @@ namespace AttendanceList
         private System.Windows.Forms.TextBox test3;
         private System.Windows.Forms.TextBox test4;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }
 

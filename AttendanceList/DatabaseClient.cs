@@ -65,15 +65,13 @@ namespace AttendanceList
             }
         }
 
-        internal void InsertAttendances(string text1, string text2, string text3, string text4)
+        internal void InsertAttendances(string studentID, string teacherID, string data, string presence)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("FirstDB")))
             {
-
-                //Attendance newAttendance = new Attendance { StudentID = text1, TeacherID = text2, Data = text3, Presence = text4};
                 List<Attendance> attendances = new List<Attendance>();
 
-                attendances.Add(new Attendance { StudentID = text1, TeacherID = text2, Data = text3, Presence = text4 });
+                attendances.Add(new Attendance { StudentID = studentID, TeacherID = teacherID, Data = data, Presence = presence });
                 
                 connection.Execute("dbo.Attendance_Insert @StudentID, @TeacherID, @Data, @Presence", attendances);
             }
