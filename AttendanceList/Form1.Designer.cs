@@ -278,6 +278,7 @@ namespace AttendanceList
             this.absentButton.TabIndex = 26;
             this.absentButton.Text = "Absent";
             this.absentButton.UseVisualStyleBackColor = true;
+            this.absentButton.Click += new System.EventHandler(this.absentButton_Click);
             // 
             // test1
             // 

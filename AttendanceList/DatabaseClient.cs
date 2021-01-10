@@ -73,7 +73,7 @@ namespace AttendanceList
 
                 attendances.Add(new Attendance { StudentID = studentID, TeacherID = teacherID, Data = data, Presence = presence });
                 
-                connection.Execute("dbo.Attendance_Insert @StudentID, @TeacherID, @Data, @Presence", attendances);
+                connection.Execute("dbo.Attendance_Insert2 @StudentID, @TeacherID, @Data, @Presence", attendances);
             }
         }
 
@@ -101,6 +101,13 @@ namespace AttendanceList
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("FirstDB")))
             {
                 return connection.Query<Teacher>($"select * from Teachers where login = '{ login }'").ToList();
+            }
+        }
+        public List<Attendance> getAttendance(string studentid, string teacherid, string data)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("FirstDB")))
+            {
+                return connection.Query<Attendance>($"SELECT * FROM Attendances WHERE StudentID = '{ studentid }' AND TeacherID = '{ teacherid }' AND Data = '{ data }' ").ToList();
             }
         }
     }

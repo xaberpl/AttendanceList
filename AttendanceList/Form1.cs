@@ -49,7 +49,10 @@ namespace AttendanceList
             label9.Text = "You are logged in as: " + teachers[0].DisplayName;        
         }
 
+        void addPresence()
+        {
 
+        }
 
 
         public void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -217,12 +220,9 @@ namespace AttendanceList
         private void presentButton_Click(object sender, EventArgs e)
         {
             DatabaseClient db = new DatabaseClient();
-
+            
             string theDate = dateTimePicker1.Value.ToString("yyyy-MM-dd");
-
-            //STUDENT ID
             string studentID = null;
-
             string text = studentList.GetItemText(studentList.SelectedItem);
             Student found = null;
 
@@ -238,16 +238,36 @@ namespace AttendanceList
                 studentID = found.id.ToString();
             }
 
+            teachers = db.whoLogged(loggedName);
+            string teacherID = teachers[0].id.ToString();           
+            db.InsertAttendances(studentID, teacherID, theDate, "1");           
+        }
 
-            //TEACHERID
+        private void absentButton_Click(object sender, EventArgs e)
+        {
+            DatabaseClient db = new DatabaseClient();
+            string theDate = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            string studentID = null;              
+            string text = studentList.GetItemText(studentList.SelectedItem);
+            Student found = null;
+
+            foreach (Student student in students)
+            {
+                if (student.DisplayName == text)
+                {
+                    found = student;
+                }
+            }
+            if (found != null)
+            {
+                studentID = found.id.ToString();
+            }
 
             teachers = db.whoLogged(loggedName);
             string teacherID = teachers[0].id.ToString();
+            db.InsertAttendances(studentID, teacherID, theDate, "0");
 
 
-
-            db.InsertAttendances(studentID, teacherID, theDate, "1");
-              
         }
     }
 }
