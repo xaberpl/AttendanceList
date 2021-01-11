@@ -36,7 +36,6 @@ namespace AttendanceList
             this.button3 = new System.Windows.Forms.Button();
             this.tName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.Lastname = new System.Windows.Forms.Label();
             this.tSurname = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,19 +52,19 @@ namespace AttendanceList
             this.label7 = new System.Windows.Forms.Label();
             this.presentButton = new System.Windows.Forms.Button();
             this.absentButton = new System.Windows.Forms.Button();
-            this.test1 = new System.Windows.Forms.TextBox();
-            this.test2 = new System.Windows.Forms.TextBox();
-            this.test3 = new System.Windows.Forms.TextBox();
-            this.test4 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // studentList
             // 
             this.studentList.FormattingEnabled = true;
-            this.studentList.Location = new System.Drawing.Point(12, 22);
+            this.studentList.Location = new System.Drawing.Point(13, 22);
             this.studentList.Name = "studentList";
             this.studentList.Size = new System.Drawing.Size(189, 420);
+            this.studentList.Sorted = true;
             this.studentList.TabIndex = 0;
             this.studentList.Click += new System.EventHandler(this.studentClick);
             this.studentList.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
@@ -92,7 +91,7 @@ namespace AttendanceList
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(250, 12);
+            this.dateTimePicker1.Location = new System.Drawing.Point(250, 22);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(257, 20);
             this.dateTimePicker1.TabIndex = 3;
@@ -124,16 +123,6 @@ namespace AttendanceList
             this.label1.TabIndex = 6;
             this.label1.Text = "Name";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(259, 94);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Student details ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Lastname
             // 
@@ -280,39 +269,10 @@ namespace AttendanceList
             this.absentButton.UseVisualStyleBackColor = true;
             this.absentButton.Click += new System.EventHandler(this.absentButton_Click);
             // 
-            // test1
-            // 
-            this.test1.Location = new System.Drawing.Point(258, 312);
-            this.test1.Name = "test1";
-            this.test1.Size = new System.Drawing.Size(113, 20);
-            this.test1.TabIndex = 28;
-            this.test1.TextChanged += new System.EventHandler(this.test1_TextChanged);
-            // 
-            // test2
-            // 
-            this.test2.Location = new System.Drawing.Point(393, 312);
-            this.test2.Name = "test2";
-            this.test2.Size = new System.Drawing.Size(113, 20);
-            this.test2.TabIndex = 29;
-            // 
-            // test3
-            // 
-            this.test3.Location = new System.Drawing.Point(258, 338);
-            this.test3.Name = "test3";
-            this.test3.Size = new System.Drawing.Size(113, 20);
-            this.test3.TabIndex = 30;
-            // 
-            // test4
-            // 
-            this.test4.Location = new System.Drawing.Point(393, 338);
-            this.test4.Name = "test4";
-            this.test4.Size = new System.Drawing.Size(113, 20);
-            this.test4.TabIndex = 31;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(152, 496);
+            this.label9.Location = new System.Drawing.Point(9, 496);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 32;
@@ -320,16 +280,45 @@ namespace AttendanceList
             this.label9.TextChanged += new System.EventHandler(this.label9_TextChanged);
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.Location = new System.Drawing.Point(62, 3);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(95, 16);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "List of students";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.Location = new System.Drawing.Point(345, 3);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(63, 16);
+            this.label11.TabIndex = 34;
+            this.label11.Text = "Calendar";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(328, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 16);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Student details";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 518);
+            this.ClientSize = new System.Drawing.Size(518, 515);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.test4);
-            this.Controls.Add(this.test3);
-            this.Controls.Add(this.test2);
-            this.Controls.Add(this.test1);
             this.Controls.Add(this.presentButton);
             this.Controls.Add(this.absentButton);
             this.Controls.Add(this.label7);
@@ -346,7 +335,6 @@ namespace AttendanceList
             this.Controls.Add(this.tDateOfBirth);
             this.Controls.Add(this.Lastname);
             this.Controls.Add(this.tSurname);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tName);
             this.Controls.Add(this.button3);
@@ -371,7 +359,6 @@ namespace AttendanceList
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox tName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Lastname;
         private System.Windows.Forms.TextBox tSurname;
         private System.Windows.Forms.Label label4;
@@ -388,11 +375,10 @@ namespace AttendanceList
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button presentButton;
         private System.Windows.Forms.Button absentButton;
-        private System.Windows.Forms.TextBox test1;
-        private System.Windows.Forms.TextBox test2;
-        private System.Windows.Forms.TextBox test3;
-        private System.Windows.Forms.TextBox test4;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label2;
     }
 }
 

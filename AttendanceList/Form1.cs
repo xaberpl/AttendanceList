@@ -10,12 +10,14 @@ using System.Windows.Forms;
 using System.Xml.Serialization;
 using System.Data.SqlClient;
 
+
 namespace AttendanceList
 {
     public partial class Form1 : Form
     { 
         List<Student> students = new List<Student>();
         List<Attendance> attendances = new List<Attendance>();
+        List<Attendance> attendances2 = new List<Attendance>();
         List<Teacher> teachers = new List<Teacher>();
         string loggedName;
 
@@ -44,9 +46,11 @@ namespace AttendanceList
         private void Form1_Load(object sender, EventArgs e)
         {
             showStudentList();
+            studentList.SelectedIndex = -1;
             DatabaseClient db = new DatabaseClient();
             teachers = db.whoLogged(loggedName);
-            label9.Text = "You are logged in as: " + teachers[0].DisplayName;        
+            label9.Text = "You are logged in as: " + teachers[0].DisplayName; 
+            
         }
 
         void addPresence()
@@ -107,6 +111,9 @@ namespace AttendanceList
 
         private void studentClick(object sender, EventArgs e)
         {
+            presentButton.BackColor = Color.Empty;
+            absentButton.BackColor = Color.Empty;
+
             string text = studentList.GetItemText(studentList.SelectedItem);
             Student found = null;
             foreach (Student student in students)
@@ -137,6 +144,55 @@ namespace AttendanceList
                 if (oDate.Date > today.AddYears(-age)) age--;
                 string wiek = age.ToString();
                 tAge.Text = wiek;
+
+                string studentID = found.id.ToString();
+                //BUTTONS//
+
+                /*string studentID = null;
+                foreach (Student student in students)
+                {
+                    if (student.DisplayName == text)
+                    {
+                        found = student;
+                    }
+                }
+                if (found != null)
+                {
+                    studentID = found.id.ToString();
+            }
+                if (attendances == null)
+                {
+                    presentButton.BackColor = Color.Empty;
+                    absentButton.BackColor = Color.Empty;
+                }
+            */
+                
+                DatabaseClient db = new DatabaseClient();
+                teachers = db.whoLogged(loggedName);
+                string teacherID = teachers[0].id.ToString();
+                string theDate = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+                
+                attendances = db.getAttendance(studentID, teacherID, theDate);
+
+                foreach (Attendance attendance in attendances)
+                {
+                    
+                    
+                        
+                    if (attendances[0].Presence == "False")
+                    {
+                        presentButton.BackColor = Color.Empty;
+                        absentButton.BackColor = Color.Red;
+                    }
+                    else if (attendances[0].Presence == "True")
+                    {
+                        presentButton.BackColor = Color.Green;
+                        absentButton.BackColor = Color.Empty;
+                    }
+                }
+                
+                
+                 
             }
         }
 
@@ -152,7 +208,17 @@ namespace AttendanceList
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-
+            tName.Text = "";
+            tSurname.Text = "";
+            tEmail.Text = "";
+            tPesel.Text = "";
+            tGender.Text = "";
+            tParentsPhoneNumber.Text = "";
+            tDateOfBirth.Text = "";
+            tAge.Text = "";
+            absentButton.BackColor = Color.Empty;
+            presentButton.BackColor = Color.Empty;
+            studentList.SelectedIndex = -1;
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -240,7 +306,10 @@ namespace AttendanceList
 
             teachers = db.whoLogged(loggedName);
             string teacherID = teachers[0].id.ToString();           
-            db.InsertAttendances(studentID, teacherID, theDate, "1");           
+            db.InsertAttendances(studentID, teacherID, theDate, "1");
+            presentButton.BackColor = Color.Green;
+            absentButton.BackColor = Color.Empty;
+
         }
 
         private void absentButton_Click(object sender, EventArgs e)
@@ -266,8 +335,8 @@ namespace AttendanceList
             teachers = db.whoLogged(loggedName);
             string teacherID = teachers[0].id.ToString();
             db.InsertAttendances(studentID, teacherID, theDate, "0");
-
-
+                absentButton.BackColor = Color.Red;
+            presentButton.BackColor = Color.Empty;
         }
     }
 }

@@ -20,7 +20,7 @@ namespace AttendanceList
         {
             get
             {
-                return $"{ FirstName } { LastName }";
+                return $"{ LastName } { FirstName }";
 
             }
         }

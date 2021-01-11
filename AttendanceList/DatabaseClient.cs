@@ -107,9 +107,11 @@ namespace AttendanceList
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("FirstDB")))
             {
-                return connection.Query<Attendance>($"SELECT * FROM Attendances WHERE StudentID = '{ studentid }' AND TeacherID = '{ teacherid }' AND Data = '{ data }' ").ToList();
+                return connection.Query<Attendance>($"SELECT Presence FROM Attendance WHERE StudentID = '{ studentid }' AND TeacherID = '{ teacherid }' AND Data = '{ data }' ").ToList();
             }
         }
+
+        
     }
 }
 
