@@ -72,7 +72,7 @@ namespace AttendanceList
                 List<Attendance> attendances = new List<Attendance>();
 
                 attendances.Add(new Attendance { StudentID = studentID, TeacherID = teacherID, Data = data, Presence = presence });
-                
+
                 connection.Execute("dbo.Attendance_Insert2 @StudentID, @TeacherID, @Data, @Presence", attendances);
             }
         }
@@ -111,7 +111,17 @@ namespace AttendanceList
             }
         }
 
-        
+        internal void removeStudent(string pesel)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("FirstDB")))
+            {
+                List<Student> students = new List<Student>();
+
+                students.Add(new Student { Pesel = pesel });
+
+                connection.Execute("dbo.Students_Insert", students);
+            }
+        }
     }
 }
 
