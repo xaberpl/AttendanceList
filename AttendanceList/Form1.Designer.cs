@@ -103,6 +103,7 @@ namespace AttendanceList
             // 
             this.tName.Location = new System.Drawing.Point(232, 104);
             this.tName.Name = "tName";
+            this.tName.ReadOnly = true;
             this.tName.Size = new System.Drawing.Size(257, 20);
             this.tName.TabIndex = 5;
             this.tName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -131,6 +132,7 @@ namespace AttendanceList
             // 
             this.tSurname.Location = new System.Drawing.Point(232, 148);
             this.tSurname.Name = "tSurname";
+            this.tSurname.ReadOnly = true;
             this.tSurname.Size = new System.Drawing.Size(257, 20);
             this.tSurname.TabIndex = 8;
             this.tSurname.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
@@ -149,6 +151,7 @@ namespace AttendanceList
             // 
             this.tDateOfBirth.Location = new System.Drawing.Point(232, 293);
             this.tDateOfBirth.Name = "tDateOfBirth";
+            this.tDateOfBirth.ReadOnly = true;
             this.tDateOfBirth.Size = new System.Drawing.Size(257, 20);
             this.tDateOfBirth.TabIndex = 10;
             // 
@@ -166,6 +169,7 @@ namespace AttendanceList
             // 
             this.tGender.Location = new System.Drawing.Point(232, 243);
             this.tGender.Name = "tGender";
+            this.tGender.ReadOnly = true;
             this.tGender.Size = new System.Drawing.Size(257, 20);
             this.tGender.TabIndex = 12;
             this.tGender.TextChanged += new System.EventHandler(this.tGender_TextChanged);
@@ -184,6 +188,7 @@ namespace AttendanceList
             // 
             this.tPesel.Location = new System.Drawing.Point(232, 339);
             this.tPesel.Name = "tPesel";
+            this.tPesel.ReadOnly = true;
             this.tPesel.Size = new System.Drawing.Size(257, 20);
             this.tPesel.TabIndex = 14;
             this.tPesel.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
@@ -202,6 +207,7 @@ namespace AttendanceList
             // 
             this.tParentsPhoneNumber.Location = new System.Drawing.Point(232, 390);
             this.tParentsPhoneNumber.Name = "tParentsPhoneNumber";
+            this.tParentsPhoneNumber.ReadOnly = true;
             this.tParentsPhoneNumber.Size = new System.Drawing.Size(257, 20);
             this.tParentsPhoneNumber.TabIndex = 16;
             this.tParentsPhoneNumber.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
@@ -220,6 +226,7 @@ namespace AttendanceList
             // 
             this.tEmail.Location = new System.Drawing.Point(232, 196);
             this.tEmail.Name = "tEmail";
+            this.tEmail.ReadOnly = true;
             this.tEmail.Size = new System.Drawing.Size(257, 20);
             this.tEmail.TabIndex = 22;
             this.tEmail.TextChanged += new System.EventHandler(this.tEmail_TextChanged);
@@ -228,6 +235,7 @@ namespace AttendanceList
             // 
             this.tAge.Location = new System.Drawing.Point(232, 434);
             this.tAge.Name = "tAge";
+            this.tAge.ReadOnly = true;
             this.tAge.Size = new System.Drawing.Size(257, 20);
             this.tAge.TabIndex = 24;
             this.tAge.TextChanged += new System.EventHandler(this.tType_TextChanged);
@@ -311,6 +319,7 @@ namespace AttendanceList
             this.button4.TabIndex = 36;
             this.button4.Text = "Remove student";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // Form1
             // 

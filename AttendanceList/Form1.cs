@@ -338,5 +338,25 @@ namespace AttendanceList
                 absentButton.BackColor = Color.Red;
             presentButton.BackColor = Color.Empty;
         }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            //deleteStudent deletestudent = new deleteStudent();
+            //DialogResult = deletestudent.ShowDialog();
+            //showStudentList();
+            DatabaseClient db = new DatabaseClient();
+            db.deleteStudent(tPesel.Text);
+            students = db.GetAllStudents();
+            showStudentList();
+            studentList.SelectedIndex = -1;
+            tName.Text = "";
+            tSurname.Text = "";
+            tEmail.Text = "";
+            tPesel.Text = "";
+            tGender.Text = "";
+            tParentsPhoneNumber.Text = "";
+            tDateOfBirth.Text = "";
+            tAge.Text = "";
+        }
     }
 }

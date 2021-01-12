@@ -111,7 +111,7 @@ namespace AttendanceList
             }
         }
 
-        internal void removeStudent(string pesel)
+        internal void studentDelete(string pesel)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("FirstDB")))
             {
@@ -119,7 +119,14 @@ namespace AttendanceList
 
                 students.Add(new Student { Pesel = pesel });
 
-                connection.Execute("dbo.Students_Insert", students);
+                connection.Execute("dbo.Student_Delete @Pesel", students);
+            }
+        }
+        public List<Student> deleteStudent(string pesel)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("FirstDB")))
+            {
+                return connection.Query<Student>($"DELETE from Students where pesel = '{ pesel }'").ToList();
             }
         }
     }
