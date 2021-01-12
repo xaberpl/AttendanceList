@@ -49,7 +49,7 @@ namespace AttendanceList
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(52, 163);
+            this.label8.Location = new System.Drawing.Point(9, 127);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 13);
             this.label8.TabIndex = 36;
@@ -57,15 +57,15 @@ namespace AttendanceList
             // 
             // tEmail
             // 
-            this.tEmail.Location = new System.Drawing.Point(55, 179);
+            this.tEmail.Location = new System.Drawing.Point(12, 143);
             this.tEmail.Name = "tEmail";
-            this.tEmail.Size = new System.Drawing.Size(113, 20);
+            this.tEmail.Size = new System.Drawing.Size(152, 20);
             this.tEmail.TabIndex = 35;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(188, 214);
+            this.label3.Location = new System.Drawing.Point(188, 178);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 13);
             this.label3.TabIndex = 34;
@@ -73,15 +73,15 @@ namespace AttendanceList
             // 
             // tParentsPhoneNumber
             // 
-            this.tParentsPhoneNumber.Location = new System.Drawing.Point(191, 230);
+            this.tParentsPhoneNumber.Location = new System.Drawing.Point(191, 194);
             this.tParentsPhoneNumber.Name = "tParentsPhoneNumber";
-            this.tParentsPhoneNumber.Size = new System.Drawing.Size(113, 20);
+            this.tParentsPhoneNumber.Size = new System.Drawing.Size(160, 20);
             this.tParentsPhoneNumber.TabIndex = 33;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(188, 163);
+            this.label6.Location = new System.Drawing.Point(188, 127);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 13);
             this.label6.TabIndex = 32;
@@ -89,15 +89,15 @@ namespace AttendanceList
             // 
             // tPesel
             // 
-            this.tPesel.Location = new System.Drawing.Point(191, 179);
+            this.tPesel.Location = new System.Drawing.Point(191, 143);
             this.tPesel.Name = "tPesel";
-            this.tPesel.Size = new System.Drawing.Size(113, 20);
+            this.tPesel.Size = new System.Drawing.Size(160, 20);
             this.tPesel.TabIndex = 31;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(52, 214);
+            this.label5.Location = new System.Drawing.Point(9, 178);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 13);
             this.label5.TabIndex = 30;
@@ -106,7 +106,7 @@ namespace AttendanceList
             // Lastname
             // 
             this.Lastname.AutoSize = true;
-            this.Lastname.Location = new System.Drawing.Point(188, 113);
+            this.Lastname.Location = new System.Drawing.Point(188, 77);
             this.Lastname.Name = "Lastname";
             this.Lastname.Size = new System.Drawing.Size(49, 13);
             this.Lastname.TabIndex = 28;
@@ -114,16 +114,16 @@ namespace AttendanceList
             // 
             // tSurname
             // 
-            this.tSurname.Location = new System.Drawing.Point(191, 129);
+            this.tSurname.Location = new System.Drawing.Point(191, 93);
             this.tSurname.Name = "tSurname";
-            this.tSurname.Size = new System.Drawing.Size(113, 20);
+            this.tSurname.Size = new System.Drawing.Size(160, 20);
             this.tSurname.TabIndex = 27;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(51, 56);
+            this.label2.Location = new System.Drawing.Point(53, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(261, 24);
             this.label2.TabIndex = 26;
@@ -132,7 +132,7 @@ namespace AttendanceList
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 113);
+            this.label1.Location = new System.Drawing.Point(9, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 25;
@@ -140,17 +140,17 @@ namespace AttendanceList
             // 
             // tName
             // 
-            this.tName.Location = new System.Drawing.Point(55, 129);
+            this.tName.Location = new System.Drawing.Point(12, 93);
             this.tName.Name = "tName";
-            this.tName.Size = new System.Drawing.Size(113, 20);
+            this.tName.Size = new System.Drawing.Size(152, 20);
             this.tName.TabIndex = 24;
             this.tName.TextChanged += new System.EventHandler(this.tName_TextChanged);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(55, 288);
+            this.button3.Location = new System.Drawing.Point(12, 240);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(109, 40);
+            this.button3.Size = new System.Drawing.Size(152, 40);
             this.button3.TabIndex = 37;
             this.button3.Text = "Save";
             this.button3.UseVisualStyleBackColor = true;
@@ -158,9 +158,9 @@ namespace AttendanceList
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(195, 288);
+            this.cancelButton.Location = new System.Drawing.Point(195, 240);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(109, 40);
+            this.cancelButton.Size = new System.Drawing.Size(156, 40);
             this.cancelButton.TabIndex = 38;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -173,9 +173,9 @@ namespace AttendanceList
             "Female",
             "Male",
             "Other"});
-            this.tGender.Location = new System.Drawing.Point(55, 230);
+            this.tGender.Location = new System.Drawing.Point(12, 194);
             this.tGender.Name = "tGender";
-            this.tGender.Size = new System.Drawing.Size(112, 21);
+            this.tGender.Size = new System.Drawing.Size(151, 21);
             this.tGender.TabIndex = 39;
             this.tGender.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -183,7 +183,7 @@ namespace AttendanceList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 486);
+            this.ClientSize = new System.Drawing.Size(363, 309);
             this.Controls.Add(this.tGender);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.button3);

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AttendanceList
 {
-    public static class Helper
+    public static class DatabaseHelper
     {
         public static string CnnVal(string name)
         {

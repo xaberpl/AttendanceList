@@ -21,7 +21,6 @@ namespace AttendanceList
         public LoginWindow()
         {
             InitializeComponent();
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -52,15 +51,7 @@ namespace AttendanceList
         private void loginButtonClick(object sender, EventArgs e)
         {
             DatabaseClient db = new DatabaseClient();
-
-            tLogin.Text = "darkes";
-            this.Hide();
-            var mainWindow = new Form1();
-            mainWindow.Closed += (s, args) => this.Close();
-            mainWindow._textBox = _textBox1;
-            mainWindow.Show();
-
-            /*text = tLogin.Text;
+            text = tLogin.Text;
             text2 = tPassword.Text;
 
             teachers = db.Login(text);
@@ -71,7 +62,7 @@ namespace AttendanceList
                 if (text == teacher.Login && text2 == teacher.Password)
                 {
                     this.Hide();
-                    var mainWindow = new Form1();
+                    var mainWindow = new MainWindow();
                     mainWindow.Closed += (s, args) => this.Close();
                     mainWindow._textBox = _textBox1;
                     mainWindow.Show();
@@ -82,8 +73,7 @@ namespace AttendanceList
             if (!loginPasswordCorrect)
             {
                 MessageBox.Show("Incorrect login or password");
-            }*/
-
+            }
         }
         public string _textBox1
         {

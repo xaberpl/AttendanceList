@@ -127,12 +127,7 @@ namespace AttendanceList
             if (error == null)
             {
                 db.addStudent(tName.Text, tSurname.Text, tEmail.Text, tPesel.Text, tGender.Text, tParentsPhoneNumber.Text);
-
-                students = db.GetAllStudents();
-
-                
-                
-
+                //students = db.GetAllStudents();
                 ActiveForm.Close();
             }
 
@@ -150,10 +145,5 @@ namespace AttendanceList
         {
 
         }
-
-        //void error(string x)
-        //{
-        //    error = error + x;
-        //}
     }
 }

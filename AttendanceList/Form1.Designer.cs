@@ -1,7 +1,7 @@
 ﻿
 namespace AttendanceList
 {
-    partial class Form1
+    partial class MainWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,6 @@ namespace AttendanceList
         {
             this.studentList = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -80,16 +79,6 @@ namespace AttendanceList
             this.button1.Text = "Add student";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.addStudent_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(230, 513);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(257, 40);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Export presences to CSV";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dateTimePicker1
             // 
@@ -254,7 +243,7 @@ namespace AttendanceList
             // 
             this.presentButton.Location = new System.Drawing.Point(230, 467);
             this.presentButton.Name = "presentButton";
-            this.presentButton.Size = new System.Drawing.Size(130, 40);
+            this.presentButton.Size = new System.Drawing.Size(259, 40);
             this.presentButton.TabIndex = 27;
             this.presentButton.Text = "Present";
             this.presentButton.UseVisualStyleBackColor = true;
@@ -262,9 +251,9 @@ namespace AttendanceList
             // 
             // absentButton
             // 
-            this.absentButton.Location = new System.Drawing.Point(366, 467);
+            this.absentButton.Location = new System.Drawing.Point(230, 513);
             this.absentButton.Name = "absentButton";
-            this.absentButton.Size = new System.Drawing.Size(121, 40);
+            this.absentButton.Size = new System.Drawing.Size(259, 40);
             this.absentButton.TabIndex = 26;
             this.absentButton.Text = "Absent";
             this.absentButton.UseVisualStyleBackColor = true;
@@ -321,7 +310,7 @@ namespace AttendanceList
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
-            // Form1
+            // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -350,10 +339,9 @@ namespace AttendanceList
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tName);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.studentList);
-            this.Name = "Form1";
+            this.Name = "MainWindow";
             this.Text = "AttendanceList";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -365,7 +353,6 @@ namespace AttendanceList
 
         private System.Windows.Forms.ListBox studentList;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox tName;
         private System.Windows.Forms.Label label1;
