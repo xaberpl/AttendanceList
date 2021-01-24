@@ -70,6 +70,8 @@
       <DependentUpon>addStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="Attendance.cs" />
+    <Compile Include="csvExporter.cs" />
+    <Compile Include="JoinAttendance.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Teacher.cs" />
     <Compile Include="User.cs" />

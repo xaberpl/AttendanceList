@@ -55,6 +55,7 @@ namespace AttendanceList
             this.label11 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // studentList
@@ -243,7 +244,7 @@ namespace AttendanceList
             // 
             this.presentButton.Location = new System.Drawing.Point(230, 467);
             this.presentButton.Name = "presentButton";
-            this.presentButton.Size = new System.Drawing.Size(259, 40);
+            this.presentButton.Size = new System.Drawing.Size(115, 40);
             this.presentButton.TabIndex = 27;
             this.presentButton.Text = "Present";
             this.presentButton.UseVisualStyleBackColor = true;
@@ -251,9 +252,9 @@ namespace AttendanceList
             // 
             // absentButton
             // 
-            this.absentButton.Location = new System.Drawing.Point(230, 513);
+            this.absentButton.Location = new System.Drawing.Point(367, 467);
             this.absentButton.Name = "absentButton";
-            this.absentButton.Size = new System.Drawing.Size(259, 40);
+            this.absentButton.Size = new System.Drawing.Size(122, 40);
             this.absentButton.TabIndex = 26;
             this.absentButton.Text = "Absent";
             this.absentButton.UseVisualStyleBackColor = true;
@@ -310,11 +311,22 @@ namespace AttendanceList
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(232, 514);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(257, 39);
+            this.button2.TabIndex = 37;
+            this.button2.Text = "Export";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button2_MouseClick);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(518, 591);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label11);
@@ -377,6 +389,7 @@ namespace AttendanceList
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button2;
     }
 }
 

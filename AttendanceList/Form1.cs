@@ -14,22 +14,24 @@ using System.Data.SqlClient;
 namespace AttendanceList
 {
     public partial class MainWindow : Form
-    { 
+    {
         List<Student> students = new List<Student>();
         List<Attendance> attendances = new List<Attendance>();
         List<Attendance> attendances2 = new List<Attendance>();
         List<Teacher> teachers = new List<Teacher>();
+        List<JoinAttendance> joinAttendance = new List<JoinAttendance>();
         string loggedName;
 
         public MainWindow()
         {
-        InitializeComponent();
+            InitializeComponent();
+
         }
 
         void showStudentList()
         {
             DatabaseClient db = new DatabaseClient();
-            
+
             students = db.GetAllStudents();
 
             studentList.Refresh();
@@ -49,7 +51,7 @@ namespace AttendanceList
             studentList.SelectedIndex = -1;
             DatabaseClient db = new DatabaseClient();
             teachers = db.whoLogged(loggedName);
-            label9.Text = "You are logged in as: " + teachers[0].DisplayName;             
+            label9.Text = "You are logged in as: " + teachers[0].DisplayName;
         }
 
         public void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -64,7 +66,7 @@ namespace AttendanceList
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -118,9 +120,9 @@ namespace AttendanceList
             }
             if (found != null)
             {
-                tName.Text = found.FirstName;
-                tSurname.Text = found.LastName;
-                tEmail.Text = found.EmailAddress;
+                tName.Text = found.StudentFirstName;
+                tSurname.Text = found.StudentLastName;
+                tEmail.Text = found.StudentEmailAddress;
                 tPesel.Text = found.Pesel;
                 tParentsPhoneNumber.Text = found.ParentsPhoneNumber;
                 tGender.Text = found.Gender;
@@ -139,16 +141,16 @@ namespace AttendanceList
                 tAge.Text = wiek;
 
                 string studentID = found.id.ToString();
-                
+
                 DatabaseClient db = new DatabaseClient();
                 teachers = db.whoLogged(loggedName);
                 string teacherID = teachers[0].id.ToString();
                 string theDate = dateTimePicker1.Value.ToString("yyyy-MM-dd");
-                
+
                 attendances = db.getAttendance(studentID, teacherID, theDate);
 
                 foreach (Attendance attendance in attendances)
-                {                        
+                {
                     if (attendances[0].Presence == "False")
                     {
                         presentButton.BackColor = Color.Empty;
@@ -159,7 +161,7 @@ namespace AttendanceList
                         presentButton.BackColor = Color.Green;
                         absentButton.BackColor = Color.Empty;
                     }
-                }              
+                }
             }
         }
 
@@ -242,18 +244,18 @@ namespace AttendanceList
 
         public void label9_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label9_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void presentButton_Click(object sender, EventArgs e)
         {
             DatabaseClient db = new DatabaseClient();
-           
+
             string theDate = dateTimePicker1.Value.ToString("yyyy-MM-dd");
             string studentID = null;
             string text = studentList.GetItemText(studentList.SelectedItem);
@@ -273,7 +275,7 @@ namespace AttendanceList
             }
 
             teachers = db.whoLogged(loggedName);
-            string teacherID = teachers[0].id.ToString();           
+            string teacherID = teachers[0].id.ToString();
             db.InsertAttendances(studentID, teacherID, theDate, "1");
             presentButton.BackColor = Color.Green;
             absentButton.BackColor = Color.Empty;
@@ -283,7 +285,7 @@ namespace AttendanceList
         {
             DatabaseClient db = new DatabaseClient();
             string theDate = dateTimePicker1.Value.ToString("yyyy-MM-dd");
-            string studentID = null;              
+            string studentID = null;
             string text = studentList.GetItemText(studentList.SelectedItem);
             Student found = null;
 
@@ -322,6 +324,15 @@ namespace AttendanceList
             tParentsPhoneNumber.Text = "";
             tDateOfBirth.Text = "";
             tAge.Text = "";
+        }
+
+        private void button2_MouseClick(object sender, MouseEventArgs e)
+        {
+
+
+            DatabaseClient db = new DatabaseClient();
+            joinAttendance = db.joinAttendences();
+            csvExporter.Export(joinAttendance);
         }
     }
 }

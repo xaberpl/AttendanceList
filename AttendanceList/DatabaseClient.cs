@@ -44,9 +44,9 @@ namespace AttendanceList
             {
                 List<Student> students = new List<Student>();
 
-                students.Add(new Student { FirstName = text1, LastName = text2, EmailAddress = text3, Pesel = text4, Gender = text5, ParentsPhoneNumber = text6 });
+                students.Add(new Student { StudentFirstName = text1, StudentLastName = text2, StudentEmailAddress = text3, Pesel = text4, Gender = text5, ParentsPhoneNumber = text6 });
 
-                connection.Execute("dbo.Students_Insert @FirstName, @LastName, @EmailAddress, @Pesel, @Gender, @ParentsPhoneNumber", students);
+                connection.Execute("dbo.Students_Insert @StudentFirstName, @StudentLastName, @StudentEmailAddress, @Pesel, @Gender, @ParentsPhoneNumber", students);
             }
         }
         public List<Teacher> Login(string login)
@@ -77,6 +77,15 @@ namespace AttendanceList
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(DatabaseHelper.CnnVal("FirstDB")))
             {
                 return connection.Query<Student>($"DELETE from Students where pesel = '{ pesel }'").ToList();
+            }
+        }
+
+        public List<JoinAttendance> joinAttendences()
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(DatabaseHelper.CnnVal("FirstDB")))
+            {
+                return connection.Query<JoinAttendance>($"SELECT * FROM dbo.Students INNER JOIN dbo.Attendance ON dbo.Students.id = dbo.Attendance.StudentID INNER JOIN dbo.Teachers ON dbo.Teachers.ID = dbo.Attendance.TeacherID; ").ToList();
+                //return connection.Query<JoinAttendance>($"SELECT Presence FROM Attendance WHERE StudentID = '{ studentid }' AND TeacherID = '{ teacherid }' AND Data = '{ data }' ").ToList();
             }
         }
     }
